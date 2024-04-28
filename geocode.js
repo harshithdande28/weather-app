@@ -1,6 +1,6 @@
 import request from "postman-request"
 const fgc = (address,callback)=>{
-    let url = 'http://api.openweathermap.org/geo/1.0/direct?q='+encodeURIComponent(address)+'&limit=1&appid=92cca40de01383b22455f1ba9b1f57e1'
+    let url = 'http://api.openweathermap.org/geo/1.0/direct?q='+encodeURIComponent(address)+'&limit=1&appid=YOUR API-KEY GOES HERE'
     request({url,json:true},(error,response)=>{
         if(error){
             callback('Unable to connect!',undefined)
