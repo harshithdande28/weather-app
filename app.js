@@ -7,8 +7,6 @@ const argv = yargs(process.argv.slice(2)).argv
 yargs(hideBin(process.argv))
 .command('find','finds a name',(yargs)=>{
     yargs.options('name',{describe:'takes a name',demandOption:true,type:'string'})
-    // .options('lat',{describe: 'takes the latitude',demandOption:false,type:'number'})
-    // .options('lon',{describe:'takes the longitude',demandOption:false,type:'number'})
 },()=>{ 
     if(argv.name !== undefined){
     geocode.fgc(argv.name,(error,data)=>{
@@ -24,13 +22,6 @@ yargs(hideBin(process.argv))
     }else{
         console.log('Enter required parameters!')
         console.log('lat,lon or name')
-    } 
-    // else if(argv.lat !== undefined && argv.lon !== undefined){
-    // forecast.rgc(argv.lat,argv.lon,(error,data)=>{
-    //     console.log('Error: ',error)
-    //     console.log('Data: ',data)
-    //     })
-    // }
-    //   
+    }    
 }).parse();
 
